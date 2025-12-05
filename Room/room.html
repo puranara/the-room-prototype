@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ROOM - OBSERVATION</title>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- =========================================
+         覆盖层 (只剩下 PC 弹窗了)
+    ========================================= -->
+    <div id="pc-overlay">
+        <div class="pc-screen">
+            <!-- Win95 风格桌面 -->
+            <div class="pc-desktop">
+                <div class="desktop-icon icon-my-computer"><div class="icon-img"></div><div class="icon-text">My Computer</div></div>
+                <div class="desktop-icon icon-recycle-bin"><div class="icon-img"></div><div class="icon-text">Recycle Bin</div></div>
+                <div class="desktop-icon icon-folder" id="secret-folder-icon"><div class="icon-img"></div><div class="icon-text">Secret Files</div></div>
+                
+                <div class="win95-window winamp-player">
+                    <div class="window-titlebar"><div class="window-title">Winamp - 1.91</div><div class="window-controls"><div class="win-btn minimize-btn">_</div><div class="win-btn close-btn">X</div></div></div>
+                    <div class="window-content winamp-content">
+                        <div class="winamp-screen"><div class="winamp-song-title">Song: Lo-Fi Chill Beats to Study/Relax To</div><div class="winamp-time">02:45</div></div>
+                        <div class="winamp-visualizer"><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div><div class="viz-bar"></div></div>
+                        <div class="winamp-controls"><div class="amp-btn prev">|&lt;&lt;</div><div class="amp-btn play">&gt;</div><div class="amp-btn pause">||</div><div class="amp-btn stop">■</div><div class="amp-btn next">&gt;&gt;|</div></div>
+                    </div>
+                </div>
+
+                <div class="win95-window secret-diary-window" id="secret-diary-window">
+                    <div class="window-titlebar"><div class="window-title">help_me.txt - Notepad</div><div class="window-controls"><div class="win-btn minimize-btn">_</div><div class="win-btn maximize-btn">□</div><div class="win-btn close-btn" id="close-secret-diary">X</div></div></div>
+                    <div class="window-content" style="background: #fff; overflow-y: scroll;">
+                        <p>If you are reading this...</p>
+                        <p>Please help me.</p>
+                        <p>- 404</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pc-taskbar"><div class="start-button"><div class="start-icon"></div><div class="start-text">Start</div></div><div class="taskbar-divider"></div><div class="taskbar-time">11:31 PM</div></div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         核心游戏容器 (CRT 显示器)
+    ========================================= -->
+    <div class="crt-monitor" id="monitor">
+        <div class="rgb-split"></div>
+        <div class="scanlines"></div>
+        <div class="crt-overlay"></div>
+        <div class="rec-indicator"><div class="rec-dot"></div>REC [00:01:25]</div>
+        
+        <div id="game-content">
+            <div id="zone-lamp" class="placeholder-zone">Lamp</div>
+            <div id="zone-window" class="placeholder-zone">Window</div>
+            <div id="zone-sofa" class="placeholder-zone">Sofa</div>
+            <div id="zone-instrument" class="placeholder-zone">Instrument</div>
+            <div id="zone-cat" class="placeholder-zone">Cat</div>
+            
+            <div id="zone-pc" class="placeholder-zone">PC</div>
+            <div id="zone-girl" class="placeholder-zone">Girl Body</div>
+            <div id="zone-throat" class="placeholder-zone">Throat</div>
+            
+            <!-- Books 热区，点击跳转到 diary.html -->
+            <div id="zone-books" class="placeholder-zone zone-tiny">Books</div>
+            <div id="zone-clue-window" class="placeholder-zone zone-tiny">Clue W</div>
+            <div id="zone-clue-ceiling" class="placeholder-zone zone-tiny">Clue C</div>
+            <div id="zone-outside-trigger" class="placeholder-zone zone-tiny">TRAP!</div>
+        </div>
+    </div>
+
+    <!-- 音频资源占位符 -->
+    <audio id="sfx-notice" src=""></audio>
+    <audio id="sfx-crash" src=""></audio>
+    <audio id="bgm-room" loop src=""></audio>
+
+    <!-- 引入专门为此页面写的复杂JS -->
+    <script src="js/room.js"></script>
+</body>
+</html>
